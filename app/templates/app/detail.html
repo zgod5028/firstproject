@@ -2,21 +2,48 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>{{ car.title }} — Подробно</title>
+  <meta name="viewport" content="width=device-width,initial‑scale=1">
+  <title>Детали товара</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container my-5">
-    <h1>{{ car.title }}</h1>
-    {% if car.image %}
-      <img src="{{ car.image.url }}" class="img-fluid mb-3" alt="{{ car.title }}">
-    {% endif %}
-    <ul class="list-group">
-      <li class="list-group-item"><strong>Модель:</strong> {{ car.model }}</li>
-      <li class="list-group-item"><strong>Год выпуска:</strong> {{ car.year }}</li>
-      <li class="list-group-item"><strong>Цена:</strong> {{ car.price }} ₽</li>
-    </ul>
-    <a href="/" class="btn btn-secondary mt-3">← Назад</a>
+
+<header class="bg-primary text-white p-3 mb-4">
+  <div class="container d-flex justify-content-between">
+    <h1 class="h3">Детали товара</h1>
+    <a href="index.html" class="text-white">← Назад в каталог</a>
   </div>
+</header>
+
+<main class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Изображение товара">
+    </div>
+    <div class="col-md-6">
+      <h2>Товар 1</h2>
+      <p class="text-muted">Категория: Электроника</p>
+      <h3 class="text-success">₽ 5 999</h3>
+      <p>Полное подробное описание товара — с характеристиками, преимуществами, отзывами и рекомендациями.</p>
+      <button class="btn btn-lg btn-success mb-3">Добавить в корзину</button>
+      <hr>
+      <h5>Характеристики:</h5>
+      <ul>
+        <li>Батарея: 5000 мА·ч</li>
+        <li>Процессор: Octa‑core 2.5 ГГц</li>
+        <li>ОЗУ: 8 ГБ</li>
+        <li>Память: 128 ГБ</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-light text-center py-3 mt-4">
+  © 2025 Мой Интернет-магазин
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
