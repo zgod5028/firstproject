@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Список автомобилей</h2>
+<a href="{% url 'car_create' %}">Добавить авто</a>
+<ul>
+  {% for car in cars %}
+    <li>
+      A {{ car.brand }} {{ car.model }} ({{ car.year }}) — {{ car.price }} KGS<br>
+
+      {% if car.image %}
+        <img src="{{ car.image.url }}" alt="Image of {{ car.brand }}" width="200"><br>
+      {% endif %}
+
+      <a href="{% url 'car_update' car.pk %}">Edit</a> |
+      <a href="{% url 'car_delete' car.pk %}">Delete</a>
+    </li>
+  {% empty %}
+    <li>No cars available.</li>
+  {% endfor %}
+</ul>
+
+
+</body>
+</html>
